@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkdwkgtkmt1uy"]
+
+[ext_resource type="Texture2D" uid="uid://bk8duty8ib6ee" path="res://assets/PNG/Game-Health-Bar.png" id="2_0qrqu"]
+[ext_resource type="Texture2D" uid="uid://bgccq88s5tpjf" path="res://assets/PNG/glass-panel.png" id="2_mx0kw"]
+[ext_resource type="Script" uid="uid://b1anausahdaua" path="res://scripts/health_bar.gd" id="3_mx0kw"]
+
+[sub_resource type="GDScript" id="GDScript_37rai"]
+script/source = "extends ProgressBar
+
+@export var tank : Tank 
+
+func _ready():
+	tank.health_changed.connect(update)
+
+func update():
+	value = tank.current_health * 100 / tank.max_health
+"
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -54.0
+offset_bottom = 34.0
+grow_horizontal = 0
+value = 100.0
+fill_mode = 1
+script = SubResource("GDScript_37rai")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 173.0
+offset_bottom = 48.0
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 4
+stretch_margin_right = 4
+stretch_margin_bottom = 4
+texture_under = ExtResource("2_mx0kw")
+texture_over = ExtResource("2_0qrqu")
+texture_progress = ExtResource("2_0qrqu")
+script = ExtResource("3_mx0kw")

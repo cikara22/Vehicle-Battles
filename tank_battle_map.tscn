@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgwhenm50ujfp"]
+
+[ext_resource type="Texture2D" uid="uid://dmjrg1e0lo2mt" path="res://assets/PNG/Tank Battle Map.png" id="1_8hr4y"]
+
+[node name="TankBattleMap" type="Sprite2D"]
+position = Vector2(336, 250)
+scale = Vector2(0.6934673, 0.64192706)
+texture = ExtResource("1_8hr4y")

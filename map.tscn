@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://dowdvphv42ej6"]
+
+[ext_resource type="Texture2D" uid="uid://dmjrg1e0lo2mt" path="res://assets/PNG/Tank Battle Map.png" id="1_wijl4"]
+[ext_resource type="PackedScene" uid="uid://bji0w5v35ukgg" path="res://Tank.tscn" id="2_e0an3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wijl4"]
+size = Vector2(14.25, 1279.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0an3"]
+size = Vector2(1835, 19.25)
+
+[node name="Map" type="Node2D"]
+
+[node name="Level" type="Sprite2D" parent="."]
+modulate = Color(0.99705297, 0.99705297, 0.99705297, 1)
+position = Vector2(909.00006, 646)
+rotation = 1.5702488
+scale = Vector2(1.5748278, 2.36288)
+texture = ExtResource("1_wijl4")
+
+[node name="Player" parent="." instance=ExtResource("2_e0an3")]
+position = Vector2(277, 330)
+rotation = 0.0
+scale = Vector2(0.25, 0.25)
+up_direction = Vector2(-1, 0)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 1825
+limit_bottom = 1260
+
+[node name="dzidovi" type="Node2D" parent="."]
+light_mask = 4
+visibility_layer = 15
+
+[node name="dzid" type="StaticBody2D" parent="dzidovi"]
+position = Vector2(8, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dzidovi/dzid"]
+position = Vector2(-17.25, 637.875)
+shape = SubResource("RectangleShape2D_wijl4")
+
+[node name="dzid2" type="StaticBody2D" parent="dzidovi"]
+position = Vector2(3150, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dzidovi/dzid2"]
+position = Vector2(-1321.125, 632)
+shape = SubResource("RectangleShape2D_wijl4")
+
+[node name="dzid3" type="StaticBody2D" parent="dzidovi"]
+position = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dzidovi/dzid3"]
+position = Vector2(916.5, 8.25)
+shape = SubResource("RectangleShape2D_e0an3")
+
+[node name="dzid4" type="StaticBody2D" parent="dzidovi"]
+position = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dzidovi/dzid4"]
+position = Vector2(916.25, 1270.375)
+shape = SubResource("RectangleShape2D_e0an3")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = 31.0
+offset_right = -6.0
+offset_bottom = 65.0
+grow_horizontal = 0
+value = 100.0
+fill_mode = 1

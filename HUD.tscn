@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkc4iqu5pc06q"]
+
+[ext_resource type="Texture2D" uid="uid://ngjyp1cgxtpx" path="res://icon.svg" id="1_efote"]
+[ext_resource type="Texture2D" uid="uid://bk8duty8ib6ee" path="res://assets/PNG/Game-Health-Bar.png" id="2_vow1y"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="HBoxContainer" parent="Margin"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Margin/Container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_neighbor_right = NodePath("../health bar")
+texture = ExtResource("1_efote")
+stretch_mode = 4
+
+[node name="health bar" type="TextureProgressBar" parent="Margin/Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+value = 75.0
+texture_progress = ExtResource("2_vow1y")
+
+[node name="ProgressBar" type="ProgressBar" parent="Margin/Container"]
+layout_mode = 2

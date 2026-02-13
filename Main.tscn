@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3pxbyfm7mrpk"]
+
+[ext_resource type="PackedScene" uid="uid://bji0w5v35ukgg" path="res://Tank.tscn" id="1_glv2v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glv2v"]
+size = Vector2(16.5, 1279.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
+size = Vector2(3146.5, 19.25)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_glv2v")]
+position = Vector2(206, 171)
+rotation = 1.570726
+
+[node name="dzidovi" type="Node2D" parent="."]
+
+[node name="dzid" type="StaticBody2D" parent="dzidovi"]
+position = Vector2(8, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dzidovi/dzid"]
+position = Vector2(-17.25, 637.875)
+shape = SubResource("RectangleShape2D_glv2v")
+
+[node name="dzid2" type="StaticBody2D" parent="dzidovi"]
+position = Vector2(3150, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dzidovi/dzid2"]
+position = Vector2(4, 632.25)
+shape = SubResource("RectangleShape2D_glv2v")
+
+[node name="dzid3" type="StaticBody2D" parent="dzidovi"]
+position = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dzidovi/dzid3"]
+position = Vector2(1571.5, 8.25)
+shape = SubResource("RectangleShape2D_uu6xs")
+
+[node name="dzid4" type="StaticBody2D" parent="dzidovi"]
+position = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dzidovi/dzid4"]
+position = Vector2(1571.75, 1270.375)
+shape = SubResource("RectangleShape2D_uu6xs")
